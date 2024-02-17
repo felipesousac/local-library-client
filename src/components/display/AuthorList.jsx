@@ -14,9 +14,11 @@ const AuthorList = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/catalog/authors").then((response) => {
-      setAuthors(response.data.content);
-    });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog/authors")
+      .then((response) => {
+        setAuthors(response.data.content);
+      });
   }, []);
 
   return (

@@ -29,7 +29,7 @@ export function BookInstanceForm() {
 
     await axios
       .post(
-        "http://localhost:8080/catalog/bookinstances",
+        "https://try-ice-production.up.railway.app/catalog/bookinstances",
         {
           bookid,
           imprint,
@@ -48,7 +48,7 @@ export function BookInstanceForm() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/catalog/books/list")
+      .get("https://try-ice-production.up.railway.app/catalog/books/list")
       .then((response) => {
         setBooks(response.data);
       })

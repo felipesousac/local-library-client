@@ -6,9 +6,11 @@ const GenreList = () => {
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/catalog/genres").then((response) => {
-      setGenres(response.data.content);
-    });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog/genres")
+      .then((response) => {
+        setGenres(response.data.content);
+      });
   }, []);
 
   return (

@@ -33,7 +33,7 @@ const BookInstanceList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/catalog/bookinstances")
+      .get("https://try-ice-production.up.railway.app/catalog/bookinstances")
       .then((response) => {
         setBookInstances(response.data);
       });

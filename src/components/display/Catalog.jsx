@@ -11,9 +11,11 @@ const Catalog = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:8080/catalog").then((response) => {
-      setCounts({ ...response.data });
-    });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog")
+      .then((response) => {
+        setCounts({ ...response.data });
+      });
   }, []);
 
   return (

@@ -13,7 +13,9 @@ const AuthorDetailPage = () => {
 
   async function deleteAuthor() {
     await axios
-      .delete(`http://localhost:8080/catalog/authors/${id}/delete`)
+      .delete(
+        `https://try-ice-production.up.railway.app/catalog/authors/${id}/delete`
+      )
       .then((response) => {
         navigate(`/catalog/authors`);
       })
@@ -25,7 +27,7 @@ const AuthorDetailPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/catalog/authors/${id}`)
+      .get(`https://try-ice-production.up.railway.app/catalog/authors/${id}`)
       .then((response) => {
         setAuthor(response.data);
         setIsLoading(false);

@@ -22,10 +22,12 @@ const BookDetailPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/catalog/books/${id}`).then((response) => {
-      setBook(response.data.body);
-      setIsLoading(false);
-    });
+    axios
+      .get(`https://try-ice-production.up.railway.app/catalog/books/${id}`)
+      .then((response) => {
+        setBook(response.data.body);
+        setIsLoading(false);
+      });
   }, []);
 
   return (

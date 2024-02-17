@@ -21,7 +21,11 @@ const GenreForm = () => {
     };
 
     await axios
-      .post("http://localhost:8080/catalog/genres", { name }, headers)
+      .post(
+        "https://try-ice-production.up.railway.app/catalog/genres",
+        { name },
+        headers
+      )
       .then((response) => {
         navigate(`/catalog/genres/${response.data.id}`);
       })

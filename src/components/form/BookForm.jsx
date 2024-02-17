@@ -21,12 +21,16 @@ const BookForm = () => {
   } = useForm();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/catalog/genres").then((response) => {
-      setGenres(response.data.content);
-    });
-    axios.get("http://localhost:8080/catalog/authors").then((response) => {
-      setAuthors(response.data.content);
-    });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog/genres")
+      .then((response) => {
+        setGenres(response.data.content);
+      });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog/authors")
+      .then((response) => {
+        setAuthors(response.data.content);
+      });
   }, []);
 
   async function createBook() {
@@ -38,7 +42,7 @@ const BookForm = () => {
 
     await axios
       .post(
-        "http://localhost:8080/catalog/books",
+        "https://try-ice-production.up.railway.app/catalog/books",
         {
           title,
           summary,

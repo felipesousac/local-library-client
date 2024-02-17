@@ -25,7 +25,7 @@ const AuthorForm = () => {
 
     await axios
       .post(
-        "http://localhost:8080/catalog/authors",
+        "https://try-ice-production.up.railway.app/catalog/authors",
         { firstname, lastname, birthdate, deathdate },
         headers
       )

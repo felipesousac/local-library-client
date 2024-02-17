@@ -6,9 +6,11 @@ const BookList = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/catalog/books").then((response) => {
-      setBooks(response.data);
-    });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog/books")
+      .then((response) => {
+        setBooks(response.data);
+      });
   }, []);
 
   return (

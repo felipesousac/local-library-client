@@ -8,10 +8,12 @@ const GenreDetailPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/catalog/genres/${id}`).then((response) => {
-      setBooksByGenre(response.data.body.bookList);
-      setTitle(response.data.body.name);
-    });
+    axios
+      .get(`https://try-ice-production.up.railway.app/catalog/genres/${id}`)
+      .then((response) => {
+        setBooksByGenre(response.data.body.bookList);
+        setTitle(response.data.body.name);
+      });
   }, []);
 
   return (

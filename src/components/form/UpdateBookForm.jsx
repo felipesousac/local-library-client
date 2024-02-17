@@ -24,14 +24,20 @@ const UpdateBookForm = () => {
   } = useForm();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/catalog/genres").then((response) => {
-      setGenres(response.data.content);
-    });
-    axios.get("http://localhost:8080/catalog/authors").then((response) => {
-      setAuthors(response.data.content);
-    });
     axios
-      .get(`http://localhost:8080/catalog/books/detail/${id}`)
+      .get("https://try-ice-production.up.railway.app/catalog/genres")
+      .then((response) => {
+        setGenres(response.data.content);
+      });
+    axios
+      .get("https://try-ice-production.up.railway.app/catalog/authors")
+      .then((response) => {
+        setAuthors(response.data.content);
+      });
+    axios
+      .get(
+        `https://try-ice-production.up.railway.app/catalog/books/detail/${id}`
+      )
       .then((response) => {
         setTitle(response.data.title);
         setSummary(response.data.summary);
@@ -50,7 +56,7 @@ const UpdateBookForm = () => {
 
     await axios
       .put(
-        `http://localhost:8080/catalog/books/${id}/update`,
+        `https://try-ice-production.up.railway.app/catalog/books/${id}/update`,
         {
           title,
           summary,

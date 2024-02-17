@@ -35,7 +35,9 @@ const BookInstanceDetailPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/catalog/bookinstances/${id}`)
+      .get(
+        `https://try-ice-production.up.railway.app/catalog/bookinstances/${id}`
+      )
       .then((response) => {
         setBookInstance(response.data);
         setIsLoading(false);
